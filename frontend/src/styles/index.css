@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: #f4f4f8;
+  --surface-elevated: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --ink: #0f0f14;
+  --ink-muted: #5c5c6d;
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.15);
+  --glow-color: rgba(124, 58, 237, 0.35);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(34, 211, 238, 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(124, 58, 237, 0.14), transparent);
+  --cursor-blend: difference;
+}
+
+.dark {
+  --surface: #0a0a0f;
+  --surface-elevated: #12121a;
+  --glass-bg: rgba(18, 18, 26, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --ink: #f4f4f8;
+  --ink-muted: #9ca3af;
+  --accent: #a78bfa;
+  --accent-soft: rgba(167, 139, 250, 0.12);
+  --glow-color: rgba(167, 139, 250, 0.4);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(34, 211, 238, 0.08), transparent),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(167, 139, 250, 0.1), transparent);
+  --cursor-blend: exclusion;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body bg-surface text-ink antialiased overflow-x-hidden;
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: rgba(124, 58, 237, 0.3);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-20 md:py-28 max-w-screen-2xl mx-auto;
+  }
+
+  .heading-display {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium
+      bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-glow
+      transition-all duration-300 hover:scale-[1.03] hover:shadow-lg focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium
+      glass-panel text-ink transition-all duration-300 hover:scale-[1.03]
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent;
+  }
+
+  .magnetic-target {
+    @apply transition-transform duration-200 ease-out;
+  }
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: carousel-scroll 40s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  clip: auto;
+  white-space: normal;
+}

@@ -1,0 +1,14 @@
+{
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
+}
