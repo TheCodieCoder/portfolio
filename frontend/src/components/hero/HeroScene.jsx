@@ -38,9 +38,12 @@ const InteractiveOrb = ({ mouse, isMobile }) => {
       <pointLight ref={lightRef} position={[2, 3, 4]} intensity={1.8} color="#a78bfa" />
       <pointLight position={[-3, -2, 2]} intensity={0.9} color="#22d3ee" />
       <ambientLight intensity={0.35} />
-      <group ref={groupRef}>
+      <group
+        ref={groupRef}
+        position={[0, isMobile ? 0.9 : 0, 0]}
+      >
         <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.6}>
-          <Sphere args={[1.2, 64, 64]} scale={isMobile ? 0.85 : 1}>
+          <Sphere args={[1.2, 64, 64]} scale={isMobile ? 0.68 : 1}>
             <MeshDistortMaterial
               color="#7c3aed"
               attach="material"
@@ -53,11 +56,11 @@ const InteractiveOrb = ({ mouse, isMobile }) => {
             />
           </Sphere>
         </Float>
-        <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-          <torusGeometry args={[1.65, 0.02, 16, 100]} />
+        <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, isMobile ? 0.15 : 0, 0]}>
+          <torusGeometry args={[1.25, isMobile ? 0.015 : 0.02, 16, 100]} />
           <meshStandardMaterial color="#22d3ee" emissive="#0891b2" emissiveIntensity={0.5} />
         </mesh>
-      </group>
+      </group >
     </>
   );
 };
@@ -79,7 +82,7 @@ const HeroScene = () => {
   const dpr = useMemo(() => (isMobile ? [1, 1.5] : [1, 2]), [isMobile]);
 
   return (
-    <div className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[560px]" aria-hidden>
+    <div className="w-full h-[420px] sm:h-[400px] md:h-[500px] lg:h-[560px]" aria-hidden>
       <Canvas
         camera={{ position: [0, 0, 4.5], fov: 45 }}
         dpr={dpr}

@@ -30,9 +30,17 @@ export const education = [
     id: 'btech',
     title: 'VII Semester — B.Tech CSE',
     institution: 'Jamia Hamdard University',
-    period: 'September 2023 — Present',
+    period: 'Since September 2023',
     detail: `CGPA: ${profile.cgpa}`,
     current: true,
+  },
+  {
+    id: 'masai-iim-ai',
+    title: 'AI for Managers — 6 Month Program',
+    institution: 'Masai × IIM Ranchi',
+    period: 'Commencing on July 2026',
+    detail: 'Professional Certification',
+    current: true
   },
 ];
 
@@ -41,15 +49,23 @@ export const skills = [
     id: 'java',
     name: 'Java',
     color: '#f89820',
-    projects: ['General-purpose development'],
+    projects: ['Basic development'],
     icon: 'java',
+    proficiency: 'Basic',
+    concepts: [
+      "Functions", "loops", "Conditional statements", "Arrays", "Strings", "Abstract Window Toolkit (AWT)", "Swing"
+    ]
   },
   {
     id: 'cpp',
     name: 'C++',
     color: '#00599c',
-    projects: ['Systems & DSA foundations'],
+    projects: ['DSA foundations'],
     icon: 'cpp',
+    proficiency: 'Basic',
+    concepts: [
+      "Functions", "loops", "Conditional statements", "Arrays", "Strings", "Abstract Window Toolkit (AWT)", "Swing", "File handling"
+    ]
   },
   {
     id: 'mysql',
@@ -57,6 +73,8 @@ export const skills = [
     color: '#00758f',
     projects: ['e-commerce-sql-analytics', 'Customer-relationship-management'],
     icon: 'mysql',
+    proficiency: 'Intermediate',
+    concepts: ["DDL (CREATE, USE, DROP)", "Data Types (INT, VARCHAR, TEXT, DATE, TIME, DECIMAL, ENUM)", "Primary Keys & AUTO_INCREMENT", "Foreign Keys & Referential Integrity", "Constraints (NOT NULL, UNIQUE, DEFAULT)", "ENUM Type", "Junction Tables (Many-to-Many)", "ER Diagram & Database Modeling", "JOINs (INNER, multi-table)", "Aggregate Functions (SUM, COUNT, AVG)", "GROUP BY & HAVING", "Subqueries (Nested & Correlated)", "CTEs (WITH clause)", "Date Functions (DATE_FORMAT, CURDATE, INTERVAL)", "Conditional Logic (CASE, COALESCE)", "Customer Retention Analysis", "Sales Funnel Analysis", "Employee Performance Benchmarking", "Revenue & Order Analytics"]
   },
   {
     id: 'nodejs',
@@ -64,13 +82,17 @@ export const skills = [
     color: '#68a063',
     projects: ['snapURL-url_shortener'],
     icon: 'nodejs',
+    proficiency: 'Intermediate',
+    concepts: ["Node.js HTTP Server Setup", "ES Modules (import/export, type: module)", "req & res Object Handling", "HTTP Redirects (res.redirect)", "nodemon (Dev Server Auto-restart)", "npm Package Management (package.json, dependencies)", "Deployment to Render.com"]
   },
   {
     id: 'express',
     name: 'ExpressJS',
-    color: '#ffffff',
+    color: '#94a3b8',
     projects: ['snapURL-url_shortener'],
     icon: 'express',
+    proficiency: 'Intermediate',
+    concepts: ["Express App Initialization", "Express Routing (app.use, app.get, app.post)", "Modular Route Files (Express Router)", "MVC Architecture (controllers, models, routes separation)", "Middleware (custom & third-party)", "Authentication Middleware (JWT verification)", "Cookie Parsing (cookie-parser)", "Environment Variables (dotenv, process.env)", "JWT Authentication (jsonwebtoken — sign, verify)", "Password Hashing (bcryptjs)", "Rate Limiting (express-rate-limit)", "Static File Serving (express.static)", "Template Engine Integration (EJS with Express)"]
   },
   {
     id: 'mongodb',
@@ -78,6 +100,10 @@ export const skills = [
     color: '#47a248',
     projects: ['snapURL-url_shortener'],
     icon: 'mongodb',
+    proficiency: 'Basic',
+    concepts: [
+      "MongoDB collections and documents", "Database design basics", "Schema creation with Mongoose", "Model creation", "CRUD operations", "Document insertion", "Finding documents", "Updating documents", "Deleting documents", "MongoDB connection setup", "Connection string handling", "Environment variables (.env)", "Mongoose ODM usage", "Schema validation", "Required fields", "Unique field constraints", "Default values in schema", "Timestamps in documents", "ObjectId basics", "Indexing basics", "Data persistence", "Query methods (find, findOne)", "Asynchronous database operations", "Error handling in database operations", "Duplicate key handling", "Database relationship basics", "URL storage structure", "Short URL mapping logic", "Document-based data modeling"
+    ]
   },
 ];
 
